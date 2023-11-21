@@ -44,15 +44,15 @@ vetor[8] = aux
 
 // j) Escreva todas as posições do vetor de trás para frente usando o casting para caractere e observe o resultado.
 let conversao = ''
-for (let i = vetor.length-1; i >= 0 ; i--) {
+for (let i = vetor.length - 1; i >= 0; i--) {
     if (vetor[i] != undefined) {
         conversao += i.toString()
     } else {
-        console.log("Não entra undefined")
+        //console.log("Não entra undefined")
     }
 }
 //console.log(conversao)
-console.table(vetor)
+//console.table(vetor)
 
 //quinta posição = indice 4
 //posição 5 = indice 5
@@ -79,11 +79,71 @@ for (let i = 0; i <= tamanhoVetor; i++) {
 // quadrada de cada um deles. Organize o seu programa em entrada, processamento e saída.
 
 // let num = promp("Digite seu número (não sendo negativo): ")
-// if(num < 0){
-//     console.log("Número negativo inválido! Tente novamente!")
+// if (num > 0) {
+//     console.log(`A raiz quadrada de ${num} é ${Math.sqrt(num)}`)
 // } else {
-    
+//     console.log("Número negativo inválido! Tente novamente!")
 // }
+
+// 4. Implemente um programa que recebe dois vetores de números reais, v1 e v2, com
+// capacidade para 4 elementos cada. O programa deve gerar um vetor v3, que armazena a
+// soma dos elementos correspondentes dos vetores v1 e v2. Ou seja, a soma dos elementos
+// de mesmo índice. Ao final o programa deve escrever os elementos de v3.
+
+// const v1 = new Array(4)
+// const v2 = new Array(4)
+// const v3 = []
+
+
+// for (let i = 0; i < v1.length; i++) {
+//     v1[i] = i
+//     v2[i] = i
+//     v3.push(v1[i]+v2[i])
+// }
+
+// console.log(v3)
+
+// 5. Implemente um programa que inicializa um vetor de inteiros com sua matrícula, de maneira
+// que cada dígito da sua matrícula seja armazenado em uma posição do vetor. Em seguida o
+// programa deve receber um número natural N entre 0 e 9 e determinar em quais posições
+// do vetor N ocorre.
+
+// const vetorMatricula = [2, 9, 7, 1, 3, 9, 2, 2, 2, 1, 0, 2, 7]
+// let num = promp("Digite um número inteiro entre 0 e 9: ")
+// let indiceIncidente = []
+// if (num >= 0 && num <= 9) {
+
+//     for (indice in vetorMatricula) {
+//         if (vetorMatricula[indice] == num)
+//             indiceIncidente.push(indice)
+//     }
+// } else {
+//     console.log("Você não atendeu as regras acima, tente novamente!")
+// }
+// console.log(`Os índices que possuem o mesmo valor do número inserido (${num}), são: ${indiceIncidente.join()}`)
+
+// Implemente um programa que recebe o número e peso de N bois. O programa deve calcular
+// e imprimir a média de peso dos bois e os números dos bois mais pesado e mais leve.
+
+let numBois = promp("Quantos bois deseja cadastrar?")
+const numDoBoi = []
+const pesoDoBoi = []
+for (let i = 1; i <= numBois; i++) {
+    console.log(`-- Cadastro do ${i}° boi --`)
+    numDoBoi.push(promp("Digite o número do boi: "))
+    pesoDoBoi.push(Number(promp("Digite o peso do boi: ")))
+    pesoDoBoi[i-1]
+}
+let sum = pesoDoBoi.reduce(function(accumulator,value){
+  return accumulator + value
+},0);
+
+let mediaPeso = sum / pesoDoBoi.length
+let maisPesado = Math.max(...pesoDoBoi)
+console.log(pesoDoBoi.findIndex(maisPesado))
+
+
+console.log(`A média do peso dos bois é de: ${mediaPeso}`)
 
 
 
